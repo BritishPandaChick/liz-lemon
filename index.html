@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Liz Lemon's Personal Website</title>
+		<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans:400italic,400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+		<!--- jQuery plugin Anythingslider --->
+		<link rel="stylesheet" href="http://skillcrush.com/wp-content/themes/skillcrush2.30/class-files/anything-slider/css/anythingslider.css">
+
+		<script type="text/javascript" src="http://skillcrush.com/wp-content/themes/skillcrush2.30/class-files/anything-slider/js/jquery.anythingslider.min.js"></script>
+
+		<script>
+		 $(function(){
+			$('#slider')
+				.anythingSlider({
+					mode: "horiz",
+					expand: false,
+					resizeContents: true,
+					buildArrows: true,
+					toggleArrows: true,
+					startText: "Start",
+					stopText: "Stop",
+					clickForwardArrow: "click",
+					clickBack: "click",
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="page">
+			<header>
+				<h1>Liz Lemon's Personal Website</h1>
+				<img id="headshot" src="img/liz-lemon.png" alt="Headshot">
+			</header>
+
+			<h4>The current time is...<span id="clock">Clock goes here</span></h4>
+
+			<blockquote id="greeting">This is where the JavaScript greeting goes...</blockquote>
+
+			<section id="bio">
+				<h2>About me</h2>
+				<p>Here is a paragraph all about how awesome I am. Don't you <em>love</em> to read about me? Hmm, not so much? Well, then replace this paragraph with some information about <strong>yourself</strong>! Or you can go read some fun articles on <a href="http://www.skillcrush.com" alt="Skillcrush.com">Skillcrush</a>.</p>
+			</section>
+
+			<!---Anythingslider Div Markup--->
+			<ul id="slider">
+					<li><img src="http://images4.fanpop.com/image/photos/14900000/S1-Promotional-Photos-Liz-Lemon-liz-lemon-14945184-1071-1500.jpg" alt="professional_pic" /></li>
+					<li><img src="http://i.huffpost.com/gen/1362193/original.jpg" alt="fun_pic" /></li>
+					<li><img src="http://cdn.pastemagazine.com/www/blogs/lists/lizlemonthumbs.jpg" alt="thumbs_up" /></li>
+			</ul>
+
+			<section id="contact">
+				<h2>Contact</h2>
+				<div id="social-icons">
+					<a href="#"><img src="img/twitter.png" alt="Twitter icon"></a>
+				</div>
+			</section>
+
+			<button id="modal-show">Join the Lemon List</button>
+				<div id="modal-container">
+					<section id="modal-box">
+						<button id="modal-hide">x</button>
+							<h2 id="newsletter-header">Sign up for my email list!</h2>
+							<form id="newsletter-signup" action="#" method="post" accept-charset="utf-8">
+								<input type="email" name="email" value="" placeholder="Your email">
+								<input type="submit" value="Sign up">
+							</form>
+					</section>
+				</div>
+
+
+			<footer>
+				<p>&copy; Skillcrush 2014</p>
+			</footer>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
