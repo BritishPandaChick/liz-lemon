@@ -8,15 +8,18 @@
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans:400italic,400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
 		
-	<!-- Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 
-	<!-- jQuery -->
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<!-- Demo CSS -->
+	<!-- <link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" /> -->
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
-	<!-- Slider code -->
-	<script>
+	<!-- Modernizr -->
+	<script src="js/modernizr.js"></script>
+
+	<!-- Anything Slider code -->
+	<!--- <script>
 		$(function(){
 			$('#slider')
 				.anythingSlider({
@@ -31,10 +34,11 @@
 					clickBack: "click",
 				});
 			});
-	</script>
+	</script> -->
+	<!-- End of Anything Slider code-->
 </head>
-<body>
-	<div class="page">
+<body class="loading">
+	<div class="page cf" id="container">
 		<header>
 			<h1>Liz Lemon's Personal Website</h1>
 			<img id="headshot" src="img/liz-lemon.png" alt="Headshot">
@@ -49,12 +53,26 @@
 			<p>Here is a paragraph all about how awesome I am. Don't you <em>love</em> to read about me? Hmm, not so much? Well, then replace this paragraph with some information about <strong>yourself</strong>! Or you can go read some fun articles on <a href="http://www.skillcrush.com" alt="Skillcrush.com">Skillcrush</a>.</p>
 		</section>
 
+		<!-- Flexslider Markup -->
+		<div id="main" role="main">
+			<section class="slider">
+				<div class="flexslider carousel">
+					<ul class="slides">
+						<li><img src="http://i.huffpost.com/gen/1362193/original.jpg" alt="fun_pic" /></li>
+						<li><img src="http://i.huffpost.com/gen/1362193/original.jpg" alt="fun_pic" /></li>
+						<li><img src="http://i.huffpost.com/gen/1362193/original.jpg" alt="fun_pic" /></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+		<!-- End of Flexslider code -->
+
 		<!-- Anythingslider Div Markup -->
-		<ul id="slider">
+		<!-- <ul id="slider">
 			<li><img src="http://images4.fanpop.com/image/photos/14900000/S1-Promotional-Photos-Liz-Lemon-liz-lemon-14945184-1071-1500.jpg" alt="professional_pic" /></li>
 			<li><img src="http://i.huffpost.com/gen/1362193/original.jpg" alt="fun_pic" /></li>
 			<li><img src="http://cdn.pastemagazine.com/www/blogs/lists/lizlemonthumbs.jpg" alt="thumbs_up" /></li>
-		</ul>
+		</ul> -->
 		<!-- End of Anythingslider code -->
 
 		<section id="contact">
@@ -83,7 +101,28 @@
 		</footer>
 	</div>
 
-<!-- JavaScript File -->
-<script type="text/javascript" src="script.js"></script>
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+	<!-- FlexSlider -->
+	<script defer src="jquery.flexslider.js"></script>
+
+	<script type="text/javascript">
+	  $(function(){
+		SyntaxHighlighter.all();
+	  });
+	  $(window).load(function(){
+		$('.flexslider').flexslider({
+		  animation: "slide",
+		  start: function(slider){
+			$('body').removeClass('loading');
+		  }
+		});
+	  });
+	</script>
+
+	<!-- JavaScript File -->
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
