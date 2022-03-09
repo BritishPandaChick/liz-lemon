@@ -9,3 +9,5 @@ This repository is based on a design created by Skillcrush. Therefore I will not
 
 ## Acknowledgements
 * Skillcrush
+* Flexslider 
+* AnythingSlider 

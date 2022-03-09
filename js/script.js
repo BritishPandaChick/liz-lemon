@@ -1,44 +1,34 @@
-/*  Modal code */
-var modalContainer = document.querySelector("#modal-container");
+$(document).ready(function(){
+  /*  Modal */
+  $("#modal-show").click(function(){
+    //show modal
+    $("#modal-container").show();
+    //hide modal
+    $("#modal-container").hide();
 
-// Hides Modal
-var hideModal = function() {
-  modalContainer.hide();
-};
+    $(document).on("keyup", function(evt) {
+      evt = evt || window.event;
+      if (evt.keycode === 27) {
+        $("#modal-container").hide();
+      }
+    });
+  });
 
-// Shows modal 
-var showModal = function() {
-  modalContainer.show();
-};
+  /* Newsletter Sign up *
+  var handleNewsletterSignup = function(evt) {
+    evt.preventDefault();
+    var newsletterHeader = $("#newsletter-header");
+    var newsletterForm = $("#newsletter-signup");
 
-var modalShowButton = $("#modal-show");
-modalShowButton.on("click", showModal());
+    newsletterForm.hide();
+    newsletterHeader.text("Thank you for signing up!");
+    setTimeout(hideModal, 2000);
+  };
 
-var modalCloseButton = $('#modal-hide');
-modalCloseButton.on("click", hideModal());
-
-$(document).on("keyup", function(evt) {
-  evt = evt || window.event;
-  if (evt.keycode === 27) {
-    hideModal();
-  }
-});
-
-/* === Newsletter Sign up === */
-var handleNewsletterSignup = function(evt) {
-  evt.preventDefault();
-  var newsletterHeader = $("#newsletter-header");
   var newsletterForm = $("#newsletter-signup");
+  newsletterForm.on("submit", handleNewsletterSignup()); */
 
-  newsletterForm.hide();
-  newsletterHeader.text("Thank you for signing up!");
-  setTimeout(hideModal, 2000);
-};
-
-var newsletterForm = $("#newsletter-signup");
-newsletterForm.on("submit", handleNewsletterSignup());
-
-/* === Begin the clock code === */
+/* Clock */
 var clockTime = function() {
   var currentTime = new Date();
   var hours = currentTime.getHours();
@@ -74,5 +64,4 @@ var clock = $("#clock");
 setInterval(function() {
   clock.text(clockTime());
 }, 1000);
-
-
+});
