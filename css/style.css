@@ -51,6 +51,15 @@ blockquote:after { content: '"'; }
 #social-icons { text-align: center; }
 
 /* === Modal === */
+#modal-show {
+	background: purple;
+	border-radius: 5px;
+	border: 4px outset purple;
+	color: white;
+	font-size: 2em;
+	margin: 0.5em;
+}
+
 #modal-container {
 	background-color: rgba(0, 0, 0, 0.5);
 	display: none;
@@ -70,15 +79,8 @@ blockquote:after { content: '"'; }
 	top: 50%;
 	transform: translateY(-50%);
 	width: 480px;
-}
-
-#modal-show {
-	background: purple;
-	border-radius: 5px;
-	border: 4px outset purple;
-	color: white;
-	font-size: 2em;
-	margin: 0.5em;
+	height: 150px;
+	padding: 20px 0;
 }
 
 #modal-hide {

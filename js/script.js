@@ -1,9 +1,15 @@
 $(document).ready(function(){
+  /* Greeting */
+  $("#greeting").text("Hello World");
+
   /*  Modal */
   $("#modal-show").click(function(){
     //show modal
     $("#modal-container").show();
-    //hide modal
+  });
+
+  //Hide modal
+  $("#modal-hide").click(function(){
     $("#modal-container").hide();
 
     $(document).on("keyup", function(evt) {
@@ -14,7 +20,7 @@ $(document).ready(function(){
     });
   });
 
-  /* Newsletter Sign up *
+  /* Newsletter Sign up 
   var handleNewsletterSignup = function(evt) {
     evt.preventDefault();
     var newsletterHeader = $("#newsletter-header");
@@ -28,40 +34,40 @@ $(document).ready(function(){
   var newsletterForm = $("#newsletter-signup");
   newsletterForm.on("submit", handleNewsletterSignup()); */
 
-/* Clock */
-var clockTime = function() {
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  var seconds = currentTime.getSeconds();
+  /* Clock */
+  var clockTime = function() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
 
-  if (hours <= 11) {
-    var period = "AM";
-  } else {
-    var period = "PM";
+    if (hours <= 11) {
+      var period = "AM";
+    } else {
+      var period = "PM";
+    }
+
+    if (hours > 12) {
+      hours = hours - 12;
+    } else if (hours === 0) {
+      hours = 12;
+    }
+
+    if (minutes < 10) {
+    minutes = "0" + String(minutes);
+    }
+
+    if (seconds < 10) {
+      seconds = "0" + String(seconds);
+    }
+
+    var time = hours + ':' + minutes + ':' + seconds + ' ' + period;
+      return time;
   }
 
-  if (hours > 12) {
-    hours = hours - 12;
-  } else if (hours === 0) {
-    hours = 12;
-  }
+  var clock = $("#clock");
 
-  if (minutes < 10) {
-   minutes = "0" + String(minutes);
-  }
-
-  if (seconds < 10) {
-    seconds = "0" + String(seconds);
-  }
-
-  var time = hours + ':' + minutes + ':' + seconds + ' ' + period;
-    return time;
-}
-
-var clock = $("#clock");
-
-setInterval(function() {
-  clock.text(clockTime());
-}, 1000);
+  setInterval(function() {
+    clock.text(clockTime());
+  }, 1000);
 });
