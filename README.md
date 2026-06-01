@@ -1,11 +1,15 @@
 # Liz Lemon Website
-Skillcrush 102 project. Made with HTML, CSS, JavaScript, and jQuery.
+Skillcrush 102 main project for August 2015 web designer blueprint
+
+## Tech Stack
+- HTML
+- CSS
+- JavaScript
+- jQuery
 
 ## Instructions
-Clone or download zip file. Open index.html file in your browser.
-
-## Contributing
-This repository is based on a design created by Skillcrush. Therefore I will not be accepting any pull requests.
+1. Clone or download zip file. 
+2. Open index.html file in your browser.
 
 ## Acknowledgements
 * Skillcrush
